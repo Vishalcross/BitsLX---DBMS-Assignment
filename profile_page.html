@@ -29,10 +29,10 @@
     .headertext{
       font-family: "Monotype Corsiva", SansSerif !important;
       font-weight: bolder;
+	  color: #FFFFFF;
     }
     body{
-      background-image: url("modern-flat-thin-line-design-buy-and-sell-concept-vector-9990674.jpg");
-      background-size: 50em 40em;
+      background-image: url("ProfileBack.jpg");
       background-position: top;
     }
   </style>
@@ -219,5 +219,10 @@
 			});
 		});
 </script>  
+<script>
+    var ht = $(window).height();
+	var wt = $(window).width();
+	$("body").css("background-size",""+wt+"px "+ht+"px");
+</script>
 </body>
 </html>
