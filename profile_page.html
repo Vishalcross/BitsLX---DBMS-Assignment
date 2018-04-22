@@ -24,7 +24,7 @@
       margin-bottom: -1em;
     }
     .transactions{
-      display: ;
+      display: block;
     }
     .headertext{
       font-family: "Monotype Corsiva", SansSerif !important;
@@ -34,7 +34,6 @@
       background-image: url("modern-flat-thin-line-design-buy-and-sell-concept-vector-9990674.jpg");
       background-size: 50em 40em;
       background-position: top;
-
     }
   </style>
 </head>
@@ -59,9 +58,9 @@
     <div class="row">
       <div class="col-2">
         <div class="btn-group btn-group-vertical" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-dark">Change Username</button>
-          <button type="button" class="btn btn-dark">Change Password</button>
-          <button type="button" class="btn btn-dark">Change Email</button>
+          <button type="button" class="btn btn-dark" id="userName" data-toggle="modal" data-target="#general">Change Username</button>
+          <button type="button" class="btn btn-dark" id="password" data-toggle="modal" data-target="#general">Change Password</button>
+          <button type="button" class="btn btn-dark" id="mail" data-toggle="modal" data-target="#general">Change Email</button>
           <button type="button" class="btn btn-dark " data-toggle="modal" data-target="#exampleModal">Add Money to wallet</button>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -89,7 +88,35 @@
               </div>
             </div>
           </div>
-          <button type="button" class="btn btn-dark">View Previous Transactions</button>
+		  <!--General purpose Modal-->
+		  <div class="modal fade" id="general" tabindex="-1" role="dialog" aria-labelledby="generalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="generalLabel">Modal Title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <label class="sr-only" for="inlineFormInputGroupUsername">Label Text</label>
+					<div class="input-group">
+						<input type="text" class="form-control" id="inlineFormInputGroupUsername3" placeholder="Sample Input Placeholder" disabled>
+					</div>
+                    <div class="input-group">
+					  
+                      <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Sample Input Placeholder">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success" id="confirm" data-dismiss="modal">Confirmation Button</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-dark" id="viewPrevious">Show Previous Transactions</button>
           <button type="button" class="btn btn-dark" disabled><strong>Current Balance</strong><div class="input-group-text" id="btnGroupAddon2">$10,000</div></button>
         </div>
 
@@ -158,5 +185,39 @@
 
 
   </div>
+<script>
+	$(document).ready(function(){
+			$("#userName").click(function(){
+				$("#generalLabel").text("Enter the new user name");
+				$("#inlineFormInputGroupUsername").attr("placeholder","New Username");
+				$("#inlineFormInputGroupUsername3").attr("placeholder","Old Username");
+				$("#confirm").text("Change User Name");
+			});	
+			$("#password").click(function(){
+				$("#generalLabel").text("Enter the new user name");
+				$("#inlineFormInputGroupUsername").attr("placeholder","new password");
+				$("#inlineFormInputGroupUsername3").attr("placeholder","Old Password");
+				$("#inlineFormInputGroupUsername").attr("type","password");
+				$("#confirm").text("Change Password");
+			});	
+			$("#mail").click(function(){
+				$("#generalLabel").text("Enter the new user name");
+				$("#inlineFormInputGroupUsername").attr("placeholder","new mailId");
+				$("#inlineFormInputGroupUsername3").attr("placeholder","Old Email");
+				$("#inlineFormInputGroupUsername").attr("type","email");
+				$("#confirm").text("Change Email");
+			});
+			$("#viewPrevious").click(function(){
+				if($(".transactions").css("display") == "none"){
+					$("#viewPrevious").text("Hide Previous Transactions");
+					$(".transactions").css("display","block");
+				}
+				else{
+					$("#viewPrevious").text("Show Previous Transactions");
+					$(".transactions").css("display","none");
+				}
+			});
+		});
+</script>  
 </body>
 </html>
