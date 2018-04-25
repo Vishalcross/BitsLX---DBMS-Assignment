@@ -105,7 +105,7 @@
 						<input type="text" class="form-control" id="inlineFormInputGroupUsername3" placeholder="Sample Input Placeholder" disabled>
 					</div>
                     <div class="input-group">
-					  
+
                       <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Sample Input Placeholder">
                     </div>
                   </form>
@@ -116,7 +116,8 @@
               </div>
             </div>
           </div>
-          <button type="button" class="btn btn-dark" id="viewPrevious">Show Previous Transactions</button>
+          <button type="button" class="btn btn-dark" id="viewPrevious">Hide Previous Transactions</button>
+          <button type="button" class="btn btn-dark">Log Out</button>
           <button type="button" class="btn btn-dark" disabled><strong>Current Balance</strong><div class="input-group-text" id="btnGroupAddon2">$10,000</div></button>
         </div>
 
@@ -192,14 +193,14 @@
 				$("#inlineFormInputGroupUsername").attr("placeholder","New Username");
 				$("#inlineFormInputGroupUsername3").attr("placeholder","Old Username");
 				$("#confirm").text("Change User Name");
-			});	
+			});
 			$("#password").click(function(){
 				$("#generalLabel").text("Enter the new user name");
 				$("#inlineFormInputGroupUsername").attr("placeholder","new password");
 				$("#inlineFormInputGroupUsername3").attr("placeholder","Old Password");
 				$("#inlineFormInputGroupUsername").attr("type","password");
 				$("#confirm").text("Change Password");
-			});	
+			});
 			$("#mail").click(function(){
 				$("#generalLabel").text("Enter the new user name");
 				$("#inlineFormInputGroupUsername").attr("placeholder","new mailId");
@@ -218,7 +219,7 @@
 				}
 			});
 		});
-</script>  
+</script>
 <script>
     var ht = $(window).height();
 	var wt = $(window).width();

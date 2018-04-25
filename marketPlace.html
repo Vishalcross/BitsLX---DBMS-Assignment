@@ -11,13 +11,20 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/vendor/holder.min.js"></script>
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
 	<style>
 		.navOptions{
 			font-size: 1.5em !important;
 		}
+    .x{
+      color: white !important;
+    }
 	</style>
   </head>
 
@@ -27,7 +34,7 @@
       <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">
           <a href="#" class="navbar-brand d-flex align-items-center">
-			<img class="mb-4 s" src="BitsLX.png" alt="" width="100em" height="50em">
+			<img class="mb-4 s" src="BitsLX.png" alt="" width="120em" height="50em">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -58,16 +65,71 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">BitsLX</h1>
+          <h1 class="jumbotron-heading">Welcome to the MarketPlace</h1>
           <p class="lead text-muted">
 			Browse through the contents to see if you can find an item that meets your needs. If none of the items seem to match create your own advertisement, so that someone can find a way to meet your needs
 		  </p>
           <p>
-            <a href="#" class="btn btn-primary my-2">Create new Advertisement to Sell</a>
-            <a href="#" class="btn btn-primary my-2">Create new Advertisement to Buy</a>
+            <button href="#" class="btn btn-lg btn-info my-1" data-toggle="modal" data-target="#exampleModal">Post an Advertisement</button>
+
           </p>
         </div>
       </section>
+
+
+
+      <!-- Advertisement Modal -->
+
+
+      <!-- Button trigger modal -->
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Create new Advertisement</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Enter Email</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">This email will be shared with the Buyer</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInput1">Advertisement Body</label>
+                  <textarea class="form-control" id="exampleInput1" rows="5" placeholder="Enter a concise description of the product you are trying to sell/buy by listing all the features."></textarea>
+                </div>
+                <div class="form-group">
+                  <div class="custom-control custom-radio">
+                    <input id="selling" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                    <label class="custom-control-label" for="selling">Selling</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input id="buying" name="paymentMethod" type="radio" class="custom-control-input" required>
+                    <label class="custom-control-label" for="buying">Buying</label>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="postingAd">Post the Ad</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Advertisement Modal -->
+
 
       <div class="album py-5 bg-light">
         <div class="container">
@@ -75,14 +137,14 @@
           <div class="row">
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-			  <div class="card-header bg-success"><strong>Buy</strong></div>
+			  <div class="card-header bg-success x"><strong>Buy</strong></div>
                 <!-- <img class="card-img-top" src="online-shopping-icons-set-selling-Download-Royalty-free-Vector-File-EPS-293769.jpg" alt="Card image cap"> -->
                 <div class="card-body">
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button> -->
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Contact Buyer</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal1">Contact Buyer</button>
                     </div>
                     <small class="text-muted">9 mins</small>
                   </div>
@@ -91,20 +153,57 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-			  <div class="card-header bg-danger"><strong>Sell</strong></div>
+			  <div class="card-header bg-danger x"><strong>Sell</strong></div>
                 <!-- <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap"> -->
                 <div class="card-body">
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Contact Seller</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal1">Contact Seller</button>
                     </div>
                     <small class="text-muted">9 mins</small>
                   </div>
                 </div>
               </div>
             </div>
+
+
+
+
+            <!-- Contact Modal -->
+
+            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel11" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Contact Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleInputEmail2">Contact Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Email" disabled>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Modal -->
+
+
+
+
+
+
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
                 <!-- <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap"> -->
@@ -218,15 +317,32 @@
 
     </main>
 
-    
 
+    <script>
+      $(document).ready(function(){
+
+
+
+        if( $("#buying").is(":checked")){
+          $("#postingAd").removeClass("btn-success");
+          $("#postingAd").addClass("btn-danger");
+
+        }
+
+        $("#postingAd").click(function(){
+          if(!$("#exampleInput1").val() ){
+            alert("Insert advert body please");
+          }
+          if(!$("#exampleInputEmail1").val() ){
+            alert("Insert email address please");
+          }
+        });
+      });
+
+    </script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../../../dist/js/bootstrap.min.js"></script>
-    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+
   </body>
 </html>

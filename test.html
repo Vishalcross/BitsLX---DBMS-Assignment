@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <title>BitsLX</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+
+</head>
+<body>
+<ul>
+  <li class="list-group-item">
+    <a href="#" class="crossButton">x</a>
+  </li>
+  <li class="list-group-item">
+    <a href="#" class="crossButton">x</a>
+  </li>
+  <li class="list-group-item">
+    <a href="#" class="crossButton">x</a>
+  </li>
+</ul>
+  <button id="abc">hello</button>
+
+<script>
+  $(document).ready(function(){
+    $("#abc").click(function(){
+      alert("H");
+    })
+  });
+  $(document).ready(function(){
+    $(".crossButton").click(function(){
+      console.log("The parent is "+$(this).parent().parent().attr('class'));
+      console.log("The index of the parent is "+$(this).parent().parent().index($(this).parent().parent()));
+      var index=$(this).parent().parent().index($(this).parent().parent());
+      console.log($("ul li:nth-child(1)").css('display','none'));
+    });
+  });
+</script>
+</body>
+</html>
