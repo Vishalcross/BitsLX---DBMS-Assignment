@@ -58,10 +58,10 @@
               </div>
               <span class="text-muted">$12</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <li class="list-group-item d-flex justify-content-between lh-condensed tatti">
               <div>
                 <div class="row">
-                  <div class="col-md-2"><i class="fas fa-times"></i></div>
+                  <a href="#" class="col-md-2 crossButton"><i class="fas fa-times"></i></a>
                   <div class="col-md-10">
                     <h6 class="my-0">Product name</h6>
                     <small class="text-muted">Brief description</small>
@@ -70,10 +70,10 @@
               </div>
               <span class="text-muted">$8</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <li class="list-group-item d-flex justify-content-between lh-condensed tatti">
               <div>
                 <div class="row">
-                  <div class="col-md-2"><i class="fas fa-times"></i></div>
+                  <a href="#" class="col-md-2 crossButton"><i class="fas fa-times"></i></a>
                   <div class="col-md-10">
                     <h6 class="my-0">Product name</h6>
                     <small class="text-muted">Brief description</small>
@@ -185,9 +185,9 @@
       $(document).ready(function(){
         $(".crossButton").click(function(){
           console.log("The parent is "+$(this).parent().parent().attr('class'));
-          console.log("The index of the parent is "+$(this).parent().parent().index($(this).parent().parent()));
-          var index=$(this).parent().parent().index($(this).parent().parent());
-          console.log($("ul li:first-child").css("display","none !important"));
+          console.log("The index of the parent is "+$(this).parent().parent().index());
+          var index=$(this).parent().parent().index();
+		  $(".itemGroup li:first-child").attr('style','display:none !important');
         });
       });
     </script>

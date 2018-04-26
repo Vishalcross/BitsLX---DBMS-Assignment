@@ -25,6 +25,9 @@
     .x{
       color: white !important;
     }
+    .seeme{
+      display: ;
+    }
 	</style>
   </head>
 
@@ -105,6 +108,13 @@
                   <label for="exampleInput1">Advertisement Body</label>
                   <textarea class="form-control" id="exampleInput1" rows="5" placeholder="Enter a concise description of the product you are trying to sell/buy by listing all the features."></textarea>
                 </div>
+                <label class="seeme" for="inlineFormInputGroup">Enter the selling price</label>
+                <div class="input-group seeme">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Rs</div>
+                  </div>
+                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+                </div>
                 <div class="form-group">
                   <div class="custom-control custom-radio">
                     <input id="selling" name="paymentMethod" type="radio" class="custom-control-input" checked required>
@@ -120,7 +130,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="postingAd">Post the Ad</button>
+              <button type="button" class="btn btn-success" id="postingAd">Post the Ad</button>
             </div>
           </div>
         </div>
@@ -323,19 +333,23 @@
 
 
 
-        if( $("#buying").is(":checked")){
-          $("#postingAd").removeClass("btn-success");
-          $("#postingAd").addClass("btn-danger");
-
-        }
-
-        $("#postingAd").click(function(){
-          if(!$("#exampleInput1").val() ){
-            alert("Insert advert body please");
-          }
-          if(!$("#exampleInputEmail1").val() ){
-            alert("Insert email address please");
-          }
+        $(function(){
+          $('#buying').click(function(){
+            if ($(this).is(':checked'))
+            {
+              $(".seeme").css("display","none");
+              $("#postingAd").removeClass("btn-success");
+              $("#postingAd").addClass("btn-danger");
+            }
+          });
+          $('#selling').click(function(){
+            if ($(this).is(':checked'))
+            {
+              $(".seeme").css("display","");
+              $("#postingAd").removeClass("btn-danger");
+              $("#postingAd").addClass("btn-success");
+            }
+          });
         });
       });
 
