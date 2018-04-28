@@ -58,10 +58,10 @@
               </div>
               <span class="text-muted">$12</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <li class="list-group-item d-flex justify-content-between lh-condensed tatti">
               <div>
                 <div class="row">
-                  <div class="col-md-2"><i class="fas fa-times"></i></div>
+                  <a href="#" class="col-md-2 crossButton"><i class="fas fa-times"></i></a>
                   <div class="col-md-10">
                     <h6 class="my-0">Product name</h6>
                     <small class="text-muted">Brief description</small>
@@ -70,10 +70,10 @@
               </div>
               <span class="text-muted">$8</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <li class="list-group-item d-flex justify-content-between lh-condensed tatti">
               <div>
                 <div class="row">
-                  <div class="col-md-2"><i class="fas fa-times"></i></div>
+                  <a href="#" class="col-md-2 crossButton"><i class="fas fa-times"></i></a>
                   <div class="col-md-10">
                     <h6 class="my-0">Product name</h6>
                     <small class="text-muted">Brief description</small>
@@ -95,7 +95,62 @@
           <h4 class="mb-3">Meeting address</h4>
           <form class="needs-validation" novalidate>
 
+<div class="mb-3">
+              <label for="username">Meeting with</label>
+              <div class="input-group">
 
+                <input type="text" class="form-control" id="username" placeholder="Username" disabled>
+
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Their Email</label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com" disabled>
+            </div>
+            <div class="mb-3">
+              <label for="email">Your Email</label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Your contact details will be shared, please enter valid details
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Meeting Point</label>
+              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+              <div class="invalid-feedback">
+                Please enter your meeting point.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="username">Meeting with</label>
+              <div class="input-group">
+
+                <input type="text" class="form-control" id="username" placeholder="Username" disabled>
+
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Their Email</label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com" disabled>
+            </div>
+            <div class="mb-3">
+              <label for="email">Your Email</label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Your contact details will be shared, please enter valid details
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Meeting Point</label>
+              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+              <div class="invalid-feedback">
+                Please enter your meeting point.
+              </div>
+            </div>
             <div class="mb-3">
               <label for="username">Meeting with</label>
               <div class="input-group">
@@ -183,9 +238,9 @@
       $(document).ready(function(){
         $(".crossButton").click(function(){
           console.log("The parent is "+$(this).parent().parent().attr('class'));
-          console.log("The index of the parent is "+$(this).parent().parent().parent().index());
-          var index=$(this).parent().parent().parent().index();  
-      $(".itemGroup li:nth-child("+index+")").attr('style','display:none !important'); 
+          console.log("The index of the parent is "+$(this).parent().parent().index());
+          var index=$(this).parent().parent().index();
+      $(".itemGroup li:first-child").attr('style','display:none !important');
         });
       });
     </script>
