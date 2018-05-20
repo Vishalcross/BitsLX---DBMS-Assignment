@@ -44,22 +44,29 @@
 <div class="test">
 
 </div>
+<br><br><br>
 <div class="container">
+	<div class="row">
 
-    <form class="form-signin">
+		<div class="col-md-4 offset-4 justify-content-center">
 
-      <div class="fr">
-        <img class="mb-4 s" src="BitsLX.png" alt="" width="220" height="90">
-        <h2 class="s">Sign into The Local Market</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <button class="btn btn-lg  btn-success btn-block" type="submit">Log in</button>
-        <button class="btn btn-danger btn-block" type="submit">Sign Up!</button>
-      </div>
+		    <form class="form-signin justify-content-center">
 
-    </form>
+		      <div class="fr">
+		        <img class="mb-4 s" src="BitsLX.png" alt="" width="220" height="90">
+		        <h2 class="s">Sign into The Local Market</h2>
+		        <label for="inputEmail" class="sr-only">Email address</label>
+		        <input type="text" id="inputEmail" class="form-control" placeholder="Username" name="username" required autofocus>
+		        <label for="inputPassword" class="sr-only">Password</label>
+		        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+		        <button class="btn btn-lg  btn-success btn-block" type="submit" formaction="login.jsp">Log in</button>
+		        <button class="btn btn-danger btn-block" type="submit" formaction="signup.jsp">Sign Up!</button>
+		      </div>
+
+		    </form>
+		</div>
+	</div>
+
   </div>
 
 
