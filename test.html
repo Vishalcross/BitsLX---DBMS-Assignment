@@ -16,7 +16,7 @@
 
 </head>
 <body>
-<ul>
+
   <li class="list-group-item">
     <a href="#" class="crossButton">x</a>
   </li>
@@ -37,10 +37,7 @@
   });
   $(document).ready(function(){
     $(".crossButton").click(function(){
-      console.log("The parent is "+$(this).parent().parent().attr('class'));
-      console.log("The index of the parent is "+$(this).parent().parent().index($(this).parent().parent()));
-      var index=$(this).parent().parent().index($(this).parent().parent());
-      console.log($("ul li:nth-child(1)").css('display','none'));
+
     });
   });
 </script>

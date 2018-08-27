@@ -183,9 +183,7 @@
       $(document).ready(function(){
         $(".crossButton").click(function(){
           console.log("The parent is "+$(this).parent().parent().attr('class'));
-          console.log("The index of the parent is "+$(this).parent().parent().parent().index());
-          var index=$(this).parent().parent().parent().index();  
-      $(".itemGroup li:nth-child("+index+")").attr('style','display:none !important'); 
+
         });
       });
     </script>
