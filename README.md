@@ -1,5 +1,5 @@
 # BITSLx- Local Marketplace
-&nbsp;&nbsp;&nbsp;&nbsp; The objective of this project is to provide a platfrom for users to partake in a virtual marketplace alowing them to trade in the desired products and services.
+The objective of this project is to provide a platform for users to partake in a virtual marketplace allowing them to trade in the desired products and services.
 ## Features
 <ul>
   <li>It can support multiple users taking part in transactions at the same time.</li>
